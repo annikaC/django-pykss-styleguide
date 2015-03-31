@@ -1,5 +1,5 @@
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 import pip
 
 # parse_requirements() returns generator of pip.req.InstallRequirement objects

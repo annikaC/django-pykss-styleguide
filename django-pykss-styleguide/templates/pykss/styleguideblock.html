@@ -1,0 +1,34 @@
+<div class="styleguide-example">
+    {% block styleguide_header %}
+    <h3 id="{{ section.section }}">{{ section.section }} <em>{{ section.filename }}</em></h3>
+    {% endblock %}
+
+    {% block styleguide_description %}
+    <div class="styleguide-description">
+      <h4>{{ section.description }}</h4>
+    </div>
+    {% endblock %}
+    {% block styleguide_code %}
+      <pre class="styleguide-code">{{ section.example|escape }}</pre>
+    {% endblock %}
+    {% if not section.modifiers %}
+      {% block styleguide_element %}
+      <div class="styleguide-element">
+          {{ section.example|safe }}
+      </div>
+      {% endblock %}
+    {% endif %}
+
+    {% block styleguide_modifier_elements %}
+    {% for modifier in section.modifiers %}
+    <div class="styleguide-element styleguide-modifier">
+        <span class="styleguide-modifier-name"><strong>{{ modifier.name }}</strong> - {{ modifier.description }}</span>
+        <br />
+        {{ modifier.example|safe }}
+    </div>
+    <br />
+    {% endfor %}
+    {% endblock %}
+
+
+</div>

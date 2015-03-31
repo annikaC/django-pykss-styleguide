@@ -1,0 +1,28 @@
+{% extends "django-pykss-styleguide/base.html" %}
+{% load pykss staticfiles %}
+
+{% block content %}
+<div class="styleguide">
+  <div class="container">
+      <div class="row">
+        <h1>Styleguide Index</h1>
+      </div>
+      {% for section in section_headers %}
+        <div class="row">
+          <h4>
+            <a href="{% url 'django-pykss-styleguide:styleguide' section.0 %}">
+              {{ section.0 }} <em>{{ section.1 }}</em>
+            </a>
+          </h4>
+        </div>
+      {% endfor %}
+  {% block extracontent %}
+  {% endblock %}
+  </div>
+</div>
+{% endblock %}
+
+
+{% block postbodyjs %}
+    <script src="{% static "pykss/js/kss.js" %}"></script>
+{% endblock %}

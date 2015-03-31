@@ -1,0 +1,34 @@
+{% extends "django-pykss-styleguide/base.html" %}
+{% load pykss staticfiles %}
+
+{% block content %}
+<div class="styleguide bg-grey">
+  <div class="container">
+    <div class="sidenav-container">
+      <div class="sidenav">
+        <span class="small-capitals">Styleguide</span>
+        <ul class="nav nav-pills nav-stacked">
+          {% for section in section_headers %}
+            <li><a href="{% url 'django-pykss-styleguide:styleguide' section.0 %}">
+              {{ section.0 }} {{ section.1 }}
+            </a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="styleguide-content">
+      <div class="row">
+        <h1>{{ page_title }}</h1>
+        {% renderstyleguide styleguide section_id using "pykss/styleguideblock.html" %}
+      </div>
+    </div>
+  {% block extracontent %}
+  {% endblock %}
+  </div>
+</div>
+{% endblock %}
+
+
+{% block postbodyjs %}
+    <script src="{% static "pykss/js/kss.js" %}"></script>
+{% endblock %}

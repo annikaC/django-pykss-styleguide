@@ -1,0 +1,47 @@
+/*
+Colours
+
+Styleguide 1.
+*/
+/*
+Colour styles
+
+.green      - Wow, green.
+.greener    - For those who really like green.
+.greenest   - For those who really love green.
+
+Example:
+  <div class="$modifier_class"><p>Example background</p></div>
+
+Styleguide 1.1
+*/
+
+.green {
+  background-color: #a1d167;
+}
+.greener {
+  background-color: #95cb54;
+}
+.greenest {
+  background-color: #8ac641;
+}
+/*
+Forms
+
+Styleguide 2.
+*/
+/*
+Standard form inputs
+
+Example:
+  <input type="text" />
+  <input type="number" />
+  <input type="date" />
+
+Styleguide 2.1
+*/
+input[type=text],
+input[type=date],
+input[type=number] {
+  padding: 5px 8px;
+}

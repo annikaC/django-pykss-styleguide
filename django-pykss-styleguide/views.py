@@ -9,13 +9,10 @@ class StyleguideMixin(object):
         return sections
 
     def get_ordered_section_headers(self, sections):
-        headers = []
         ordered_sections = self.get_ordered_sections(sections)
-        for section in ordered_sections:
-            section_name = section
-            if len(section_name.split('.')) == 1:
-                # Found the next section
-                headers.append((section_name, ordered_sections[section].description,))
+        headers = [(section, y[section].description)
+                   for section in ordered_sections
+                   if len(section.split('.')) == 1]
         return headers
 
 
@@ -33,7 +30,7 @@ class StyleguideSectionView(StyleguideView, StyleguideMixin):
         d = context['styleguide'].sections
         section_headers = self.get_ordered_section_headers(d)
         section_id = int(context['section_id'])
-        # section headers is 0 indexed
+        # section headers is 0 indexed, styleguide starts at 1
         page_title = section_headers[section_id - 1][1]
         context.update({
             'section_headers': section_headers,

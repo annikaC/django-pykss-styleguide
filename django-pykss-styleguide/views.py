@@ -10,7 +10,7 @@ class StyleguideMixin(object):
 
     def get_ordered_section_headers(self, sections):
         ordered_sections = self.get_ordered_sections(sections)
-        headers = [(section, y[section].description)
+        headers = [(section, ordered_sections[section].description,)
                    for section in ordered_sections
                    if len(section.split('.')) == 1]
         return headers

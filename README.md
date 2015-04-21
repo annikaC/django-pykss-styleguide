@@ -21,6 +21,6 @@ Add 'pykss' and 'django-pykss-styleguide' to INSTALLED_APPS
 
 And make sure to add to your patterns in urls.py too:
 
- 	url(r'^styles/', include('django-pykss-styleguide.urls', namespace='django-pykss-styleguide')),
+ 	url(r'^', include('django-pykss-styleguide.urls', namespace='django-pykss-styleguide')),
   
 Originally developed for Open Utility's internal styleguide.

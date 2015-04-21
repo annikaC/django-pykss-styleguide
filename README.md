@@ -13,7 +13,7 @@ Please refer to the [KSS syntax](http://warpspire.com/kss/) for getting this to 
 See a very barebones demo here: [demo link](http://annikaclarke.co.uk/styleguide/index)
 
 Requirements: 
-pykss
+pykss - see [here](https://github.com/seanbrant/pykss)
 
 Add these lines to settings.py:
 

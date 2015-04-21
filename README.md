@@ -10,6 +10,8 @@ Copy, fork, override, have fun!
 
 Please refer to the [KSS syntax](http://warpspire.com/kss/) for getting this to work with your CSS.
 
+See a very barebones demo here: [demo link](http://annikaclarke.co.uk/styleguide/index)
+
 Requirements: 
 pykss
 
